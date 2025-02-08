@@ -6,26 +6,42 @@ public class Book {
 	private String ISBN;
 	private double price;
 	
-	Book() {
-		this.title = "Unkown";
-		this.author = "Unkown";
-		this.ISBN = "Unkown";
-		this.price = 0.0;
-	}
-	
-	Book(String title, String author, String ISBN, double price) {
-		this.title = title;
-		this.author = author;
-		this.ISBN = ISBN;
-		this.price = price;
-	}
-	
-	Book(Book other) {
-		this.title = other.title;
-		this.author = other.author;
-		this.ISBN = other.ISBN;
-		this.price = other.price;
-	}
+	/**
+     * Default constructor that initializes a Book object with default details, being "Unknown" for the strings, and "0.0" for the double.
+     */
+    public Book() {
+        this.title = "Unknown";
+        this.author = "Unknown";
+        this.ISBN = "Unknown";
+        this.price = 0.0;
+    }
+
+    /**
+     * Parameterized constructor that sets the Book object's attributes.
+     * 
+     * @param title  The title of the book.
+     * @param author The author of the book.
+     * @param ISBN   The ISBN number of the book.
+     * @param price  The price of the book.
+     */
+    public Book(String title, String author, String ISBN, double price) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.price = price;
+    }
+
+    /**
+     * Copy constructor that creates a new Book object from an existing one.
+     * 
+     * @param other The book object to copy from.
+     */
+    public Book(Book other) {
+        this.title = other.title;
+        this.author = other.author;
+        this.ISBN = other.ISBN;
+        this.price = other.price;
+    }
 	
 	/**
 	 * Gets the title of the book.
