@@ -131,7 +131,13 @@ public class Book {
 	 * @param other The book to compare with.
 	 * @return true if the ISBNs match false otherwise.
 	 */
-	public boolean equals(Book other) {
-	    return other != null && ISBN.equals(other.ISBN);
+	@Override
+	public boolean equals(Object other) {
+		if (other == null || other.getClass() != Book.class)
+		{
+			return false;
+		}
+		
+	    return ISBN.equals(((Book)other).ISBN);
 	}
 }
